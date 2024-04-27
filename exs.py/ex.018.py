@@ -1,0 +1,5 @@
+name = str(input('Write all your name0:')).strip()
+print('upper: {}'.format(name.upper()))
+print('lower: {}'.format(name.lower()))
+print('len all: {}'.format(len(name) - name.count(' ')))
+print('len first name: {}'.format(name.find(' ')))
