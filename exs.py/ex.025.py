@@ -1,3 +1,4 @@
+#Calcula uma multa com base na velocidade
 velocidade = float(input('digite a velocidade que passou pelo radar: '))
 multa = (velocidade-80)*7
 if velocidade > 80:

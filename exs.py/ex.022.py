@@ -1,3 +1,4 @@
+#Imprime a quantidade, a posição do primeiro e ultimo encontrado do caracter 'A'
 nome = str(input('Digite se nome completo: ')).lower().strip()
 print('A letra a Aparece {} vezes'.format(nome.count('a', 0,)))
 print('O primeiro a aparace na posição {}'.format(nome.find('a') + 1))

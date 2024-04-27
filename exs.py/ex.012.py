@@ -1,3 +1,4 @@
+#Calculo de reajuste salarial
 Sb = float(input('Salário base:'))
 I = float()
 if Sb<= 2000.00:

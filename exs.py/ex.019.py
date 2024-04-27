@@ -1,3 +1,4 @@
+#Lê um número e imprime sua unidade, dezena, centena e se milhar
 num = int(input('Digite um número: '))
 u = num // 1 % 10
 d = num // 10 % 10

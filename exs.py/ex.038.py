@@ -1,3 +1,4 @@
+#Imprime uma PA
 a1 = int(input('Digite o primeiro termo de uma PA: '))
 r = int(input('Digite a razão da PA: '))
 s = 0

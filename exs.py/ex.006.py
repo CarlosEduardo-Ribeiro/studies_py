@@ -1,3 +1,4 @@
+#Lê uma variavel e retorna a classificação dela
 A = input('Digite algo:')
 print(type(A))
 print(A.isalpha())

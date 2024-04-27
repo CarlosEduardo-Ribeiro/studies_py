@@ -1,3 +1,4 @@
+#Lê 6 valores e imprime o maior e o menor entre eles
 maior = 0
 menor = 0
 for p in range(1, 6):

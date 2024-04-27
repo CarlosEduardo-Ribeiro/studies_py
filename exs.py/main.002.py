@@ -1,3 +1,4 @@
+#Calcula quantidade de strings semelhantes e imprime de acordo com a entrada de dados no laço for 
 somaidade = 0
 mediaidade = 0
 maioridadeM = 0

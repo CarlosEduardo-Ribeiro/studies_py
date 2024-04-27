@@ -1,3 +1,4 @@
+#Retorna a idade e a necessidade de alistamento militar obrigatório ou não
 from datetime import date
 atual = date.today().year
 nasc = int(input('ano de nascimento: '))

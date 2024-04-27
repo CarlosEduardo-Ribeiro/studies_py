@@ -1,4 +1,4 @@
-A = int(input('Digite um número inteiro:'))
+A = int(input('Digite um número: '))
 print('-------------')
 print(' {} X  1 = {}'.format(A, A))
 print(' {} X  2 = {}'.format(A, A*2))
