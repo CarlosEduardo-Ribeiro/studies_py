@@ -1,8 +1,9 @@
+# Sequência = - X^30/1 + X^29/4 - X^28/3 + X^27/16 ... S = soma
 x = float(input('Digite um número: '))
-expo = 30
-S = []
-soma = 0
+expo = 30 
 count = 0
+soma = 0
+S = []
 print('S = ', end=(' '))
 for i in range(30):
         if i %2 == 0:
@@ -22,5 +23,3 @@ for i in range(30):
                 print('a{} = + {:.0f}^{}/{}, '.format(i, x, expo+2, i**2),end=(''))
 print('\n')
 print('soma = {:.0f}'.format(soma))
-# -X**30/1+i + X**29/i**2 - X**27/1+i + X**26/i**2 - X**25/1+i + X**24/i**2 - X**23/1+i
-# I = 0 A cada termo i+=1
