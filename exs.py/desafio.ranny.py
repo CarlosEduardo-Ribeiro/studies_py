@@ -4,7 +4,7 @@ expo = 30
 count = 0
 soma = 0
 S = []
-print('S = ', end=(' '))
+print('S = [', end=(' '))
 for i in range(30):
         if i %2 == 0:
                 termo = -x**expo/1+count
@@ -21,5 +21,6 @@ for i in range(30):
                 count += 2
                 S.append(termo)
                 print('a{} = + {:.0f}^{}/{}, '.format(i, x, expo+2, i**2),end=(''))
+print(']')
 print('\n')
 print('soma = {:.0f}'.format(soma))
