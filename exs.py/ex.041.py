@@ -1,4 +1,5 @@
 #Ex 1098 beecrowd
+#teste
 i, j = 0, 1
 while i <= 2:
     for a in range(3):
