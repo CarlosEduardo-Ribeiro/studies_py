@@ -11,7 +11,7 @@ for i in range(30):
                 expo -= 1
                 soma += termo 
                 S.append(termo)
-                print('a{} = - {:.0f}^{}/{}, '.format(i + 1, x, expo+1, 1+i), end=(''))
+                print('\033[1;32;44ma{}\033[m = - {:.0f}^{}/{}, '.format(i + 1, x, expo+1, 1+i), end=(''))
         elif i %2 != 0:
                 expo-= 1
                 i += 1
@@ -20,7 +20,10 @@ for i in range(30):
                 soma += termo
                 count += 2
                 S.append(termo)
-                print('a{} = + {:.0f}^{}/{}, '.format(i, x, expo+2, i**2),end=(''))
+                if i < 29:
+                    print('\033[1;32;44ma{}\033[m  = + {:.0f}^{}/{}, '.format(i, x, expo+2, i**2),end=(''))
+                else:
+                    print('\033[1;32;44ma{}\033[m  = + {:.0f}^{}/{} '.format(i, x, expo+2, i**2),end=(''))
 print(']')
 print('\n')
 print('soma = {:.0f}'.format(soma))
