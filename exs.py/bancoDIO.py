@@ -82,7 +82,11 @@ def main():
             case 4:
                 exibir_saldo()
             case 5:
-                print("Saindo do sistema. Até logo!")
+                print("Saindo do sistema em...")
+                for i in range(3):
+                    sleep(1)
+                    print(f'{3-i}')
+                print('Até logo!')
                 break
             case _:
                 print("Opção inválida. Por favor, escolha uma opção válida.")
