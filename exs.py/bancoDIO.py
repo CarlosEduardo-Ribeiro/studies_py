@@ -1,6 +1,8 @@
 movimentacao = []
-
+saldo = []
+from time import sleep
 def menu():
+    sleep(1.5)
     print('''
     SISTEMA BANCÁRIO DIO
 
@@ -8,11 +10,12 @@ Digite a opção desejada:
 [ 1 ] Depositar
 [ 2 ] Sacar
 [ 3 ] Ver extrato
-[ 4 ] Sair''')
+[ 4 ] Ver saldo 
+[ 5 ] Sair''')
 
 def menu_saque():
-    print('''Você escolheu [ 2 ] Sacar
-Para sacar, deve-se seguir os seguintes critérios:
+    print('''\nVocê escolheu [ 2 ] Sacar
+Para sacar, deve-se seguir os seguintes critérios:\n
 1 - Deve haver saldo disponível em sua conta bancária.
 2 - O saque não deve ser maior que R$ 500.00.
 3 - Você tem o limite de 3 saques diários.
@@ -33,6 +36,7 @@ def realizar_deposito():
     while deposito <= 0:
         deposito = float(input('O depósito deve ser maior que zero. Quanto gostaria de depositar? '))
     movimentacao.append({"tipo": "Depósito", "valor": deposito})
+    saldo.append(deposito)
     return deposito
 
 def realizar_saque(deposito):
@@ -40,12 +44,13 @@ def realizar_saque(deposito):
     lim_saque = 0
     while lim_saque < 3:
         saque = float(input('\nQuanto gostaria de sacar? '))
-        if saque > 500:
-            print('Valor digitado maior que R$ 500.00, tente novamente.')
-            continue
+    
         if saque > deposito:
             print(f'Valor solicitado de R$ {saque:.2f} é maior que o saldo disponível de R$ {deposito:.2f}')
             break
+        elif saque > 500:
+            print('Valor digitado maior que R$ 500.00, tente novamente.')
+            continue
         deposito -= saque
         movimentacao.append({"tipo": "Saque", "valor": saque})
         lim_saque += 1
@@ -55,7 +60,9 @@ def realizar_saque(deposito):
     if lim_saque == 3:
         print('Você atingiu o limite de 3 saques diários.')
     return deposito
-
+def exibir_saldo():
+    print(f'Saldo: R$ {sum(saldo)}')
+    
 def main():
     deposito = 0.0
     while True:
@@ -65,18 +72,20 @@ def main():
         except ValueError:
             print("Opção inválida. Por favor, escolha uma opção válida.")
             continue
-        
-        if escolha == 1:
-            deposito += realizar_deposito()
-        elif escolha == 2:
-            deposito = realizar_saque(deposito)
-        elif escolha == 3:
-            exibir_extrato()
-        elif escolha == 4:
-            print("Saindo do sistema. Até logo!")
-            break
-        else:
-            print("Opção inválida. Por favor, escolha uma opção válida.")
+        match escolha: 
+            case 1:
+                deposito += realizar_deposito()
+            case 2:
+                deposito = realizar_saque(deposito)
+            case 3:
+                exibir_extrato()
+            case 4:
+                exibir_saldo()
+            case 5:
+                print("Saindo do sistema. Até logo!")
+                break
+            case _:
+                print("Opção inválida. Por favor, escolha uma opção válida.")
 
 if __name__ == "__main__":
     main()
